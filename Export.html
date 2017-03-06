@@ -50,9 +50,9 @@ li a:hover {
 <body>
 
 <ul>
-  <li style = "background-color: #8E9B90"><a class="active" href="home.html">HOME</a></li>
+  <li><a class="active" href="home.html">HOME</a></li>
   <li><a href="Import.html">IMPORT</a></li>
-  <li ><a href="Export.html">EXPORT</a></li>
+  <li style = "background-color: #8E9B90" ><a href="Export.html">EXPORT</a></li>
   <li><a href="Find.html">FIND</a></li>
 
 <div class="title">
@@ -65,6 +65,16 @@ li a:hover {
   </span>
 </div>
 </ul>
+<br>
+<br>
 
+<div style="width:800px; margin:0 auto;">
+<form action="Export.php" method= "post">
+  <fieldset>
+   <textarea rows="30" cols="90" type="text" name="ExportTapes" placeholder="Scan Tapes Here"></textarea>
+   <input type='submit' name='Submit' value='Submit' />
+</fieldset>
+</form>
+</div>
 </body>
 </html>
