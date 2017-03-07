@@ -17,7 +17,10 @@ foreach (range(0, $countOfArray-1) as $number) {
   $currentTape = $tapeArray[$number];
   $res = $mysqli->query("SELECT Tape, Location FROM tapelocation WHERE Tape ='$currentTape'");
   if ($res->num_rows == 0){
-	  echo "Tape is not in library";
+	  echo "<b>"; 
+	  echo $currentTape; 
+	  echo "</b>";
+	  echo " is not in library <br>";
   }
   else{
   $row = $res->fetch_assoc();
@@ -27,7 +30,7 @@ foreach (range(0, $countOfArray-1) as $number) {
 
   echo "<u>";
   echo $tape;
-  echo '_____---->_____';
+  echo ' ----> ';
   echo $location;
   echo "</u>";
   echo "<br>";
