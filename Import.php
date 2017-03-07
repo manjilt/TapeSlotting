@@ -15,12 +15,9 @@ if ($mysqli->connect_errno) {
 
 foreach (range(0, $countOfArray-1) as $number) {
   $currentTape = $tapeArray[$number];
-  echo $currentTape;
   $res = $mysqli->query("SELECT Hosting, Tape FROM tapes WHERE Tape ='$currentTape'");
   $row = $res->fetch_assoc();
   $hosting = $row['Hosting'];
-  echo $hosting;
-  echo "<br>";
   $locationQuery = $mysqli->query("SELECT Location FROM location WHERE  Empty =1 AND Hosting = '$hosting' LIMIT 1");
   $rowloc = $locationQuery->fetch_assoc();
   $location = $rowloc['Location'];
