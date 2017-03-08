@@ -3,10 +3,10 @@ $user = 'root';
 $password = '';
 $database = 'tapes';
 $tapes = $_POST["ImportTapes"];
-
+//$tapes = preg_replace('#\s+#',',',trim($tapes));
 $tapeArray = explode(",", $tapes);
-$countOfArray = count($tapeArray);
 
+$countOfArray = count($tapeArray);
 
 $mysqli = new mysqli("localhost", $user, $password, $database);
 if ($mysqli->connect_errno) {
@@ -21,7 +21,6 @@ foreach (range(0, $countOfArray-1) as $number) {
 	  echo $currentTape; 
 	  echo "</b>";
 	  echo " is already in library <br>";
-	  die;
   }
   $res = $mysqli->query("SELECT Hosting, Tape FROM tapes WHERE Tape ='$currentTape'");
   $row = $res->fetch_assoc();
