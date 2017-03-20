@@ -4,7 +4,7 @@ $password = '';
 $database = 'tapes';
 $tapes = $_POST["ExportTapes"];
 
-$tapeArray = explode(",", $tapes);
+$tapeArray = explode("\r\n", $tapes);
 $countOfArray = count($tapeArray);
 
 
@@ -15,11 +15,11 @@ if ($mysqli->connect_errno) {
 
 foreach (range(0, $countOfArray-1) as $number) {
   $currentTape = $tapeArray[$number];
-	
+
   $res = $mysqli->query("SELECT Tape, Location FROM tapelocation WHERE Tape ='$currentTape'");
    if ($res->num_rows == 0){
-	  echo "<b>"; 
-	  echo $currentTape; 
+	  echo "<b>";
+	  echo $currentTape;
 	  echo "</b>";
 	  echo " is not in library <br>";
   }
@@ -42,6 +42,6 @@ foreach (range(0, $countOfArray-1) as $number) {
   }
 
   }
-}  
+}
 
 ?>
