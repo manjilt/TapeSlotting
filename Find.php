@@ -6,6 +6,20 @@ $tapes = $_POST["FindTapes"];
 
 $tapeArray = explode("\r\n", $tapes);
 $countOfArray = count($tapeArray);
+?>
+
+
+<button onclick="myFunction()">Print this page</button>
+
+<script>
+function myFunction() {
+    window.print();
+}
+</script>
+<br>
+<br>
+
+<?php
 
 
 $mysqli = new mysqli("localhost", $user, $password, $database);
