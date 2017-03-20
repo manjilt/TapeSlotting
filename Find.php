@@ -29,26 +29,33 @@ if ($mysqli->connect_errno) {
 
 foreach (range(0, $countOfArray-1) as $number) {
   $currentTape = $tapeArray[$number];
-  $res = $mysqli->query("SELECT Tape, Location FROM tapelocation WHERE Tape ='$currentTape'");
-  if ($res->num_rows == 0){
-	  echo "<b>";
-	  echo $currentTape;
-	  echo "</b>";
-	  echo " is not in library <br>";
-  }
+  if(strlen($currentTape) != 6){
+    echo $currentTape;
+    echo "<b>";
+    echo "_INVALID TAPE_ ";
+    echo "</b><br>";}
   else{
-  $row = $res->fetch_assoc();
-  $location = $row['Location'];
-  $tape = $row['Tape'];
+    $res = $mysqli->query("SELECT Tape, Location FROM tapelocation WHERE Tape ='$currentTape'");
+    if ($res->num_rows == 0){
+  	  echo "<b>";
+  	  echo $currentTape;
+  	  echo "</b>";
+  	  echo " is not in library <br>";
+    }
+    else{
+    $row = $res->fetch_assoc();
+    $location = $row['Location'];
+    $tape = $row['Tape'];
 
 
-  echo "<u>";
-  echo $tape;
-  echo ' ----> ';
-  echo $location;
-  echo "</u>";
-  echo "<br>";
-  }
+    echo "<u>";
+    echo $tape;
+    echo ' ----> ';
+    echo $location;
+    echo "</u>";
+    echo "<br>";
+    }
+}
 }
 
 ?>

@@ -32,10 +32,11 @@ foreach (range(0, $countOfArray-1) as $number) {
   if(strlen($currentTape) != 6){
     echo $currentTape;
     echo "<b>";
-    echo "INVALID TAPE";
-    echo "</b>";
+    echo "__INVALID TAPE_";
+    echo "</b><br>";
   }
   else{
+    $currentTape = mysql_real_escape_string($currentTape);
     $res = $mysqli->query("SELECT Tape, Location FROM tapelocation WHERE Tape ='$currentTape'");
     if ($res->num_rows > 0){
   	  echo "<b>";
