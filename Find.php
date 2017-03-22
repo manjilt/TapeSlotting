@@ -1,6 +1,6 @@
 <?php
 $user = 'root';
-$password = '';
+$password = 'sdprod01';
 $database = 'tapes';
 $tapes = $_POST["FindTapes"];
 

@@ -1,6 +1,6 @@
 <?php
 $user = 'root';
-$password = '';
+$password = 'sdprod01';
 $database = 'tapes';
 $tapes = $_POST["ExportTapes"];
 
@@ -35,7 +35,7 @@ foreach (range(0, $countOfArray-1) as $number) {
     echo "_INVALID TAPE_ ";
     echo "</b><br><br>";}
   else{
-    $currentTape = mysql_real_escape_string($currentTape);
+    $currentTape = mysqli_real_escape_string($mysqli,$currentTape);
     $res = $mysqli->query("SELECT Tape, Location FROM tapelocation WHERE Tape ='$currentTape'");
      if ($res->num_rows == 0){
   	  echo "<b>";

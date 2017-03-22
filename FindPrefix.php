@@ -1,6 +1,6 @@
 <?php
 $user = 'root';
-$password = '';
+$password = 'sdprod01';
 $database = 'tapes';
 $prefixes = $_POST["FindPreTapes"];
 
