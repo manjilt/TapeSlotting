@@ -1,21 +1,68 @@
+body {
+     background-image: url("background20161.jpg");
+     opacity: 0.9;
+     background-position: center center;
 
+     /* Background image doesn't tile */
+     background-repeat: no-repeat;
+
+     /* Background image is fixed in the viewport so that it doesn't move when
+        the content's height is greater than the image's height */
+     background-attachment: fixed;
+
+     /* This is what makes the background image rescale based
+        on the container's size */
+     background-size: cover;
+
+     /* Set a background color that will be displayed
+        while the background image is loading */
+     background-color: #464646;
+
+     background-size: cover;
+
+/* Preserve aspet ratio */
+    min-width: 100%;
+    min-height: 100%;
+}
+
+textarea {
+  /* Fallback for web browsers that don't support RGBa */
+   background-color: rgb(0, 0, 0);
+   /* RGBa with 0.6 opacity */
+   background-color: rgba(0, 0, 0, 0.30);
+   /* For IE 5.5 - 7*/
+   filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);
+   /* For IE 8*/
+   -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
+  width:100%;
+  font-size:20px;
+  color: white;
+  font-family: "Times New Roman", Times, serif;
+
+}
 ul {
     list-style-type: none;
-    margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #006494;
+    background-color: #006480;
+    border-radius: 8px;
+    box-shadow: 0 1px 0.2px 0.2px #777777, 0 -2px rgba(0, 0, 0, 0.3) inset;
+    position: relative;
+    left: 100px;
+    width: 85%;
+
 }
 
 li {
     float: left;
+    padding-left: 0.1cm;
 }
 
 li a {
     display: block;
     color: white;
     text-align: center;
-    padding: 14px 16px;
+    padding: 15px 16px;
     text-decoration: none;
 }
 
@@ -27,7 +74,7 @@ li a:hover {
         color:#fff;
         font-size:20px;
         font-weight:800;
-        margin:10px;
+        margin:9px;
         margin: 10px 25px 10px 50px;
     }
 .logout-spn:hover {
@@ -43,3 +90,18 @@ li a:hover {
        padding-left: 0.2cm;
        padding-right: 10cm;
                     }
+.prefix{
+  /* Fallback for web browsers that don't support RGBa */
+   background-color: rgb(0, 0, 0);
+   /* RGBa with 0.6 opacity */
+   background-color: rgba(0, 0, 0, 0.30);
+   /* For IE 5.5 - 7*/
+   filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);
+   /* For IE 8*/
+   -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
+  width:40%;
+  font-size:20px;
+  color: white;
+  font-family: "Times New Roman", Times, serif;
+
+}
