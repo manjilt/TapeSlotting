@@ -99,7 +99,7 @@ li a:hover {
    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);
    /* For IE 8*/
    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
-  width:40%;
+  width:60%;
   font-size:20px;
   color: white;
   font-family: "Times New Roman", Times, serif;
